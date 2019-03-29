@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cmn-Hans">
+    <meta charset="UTF-8">
+    <title>DSBridge Test</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=no"/>
+    <!--require dsbridge init js-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js"> </script>-->
+    <script src="./dsbridge.js"></script>
+</head>
+<body>
+
+<script>
+
+    dsBridge.register('multiplyValue', function (r, l) {
+        return r * l;
+    })
+
+    dsBridge.registerAsyn('append', function (arg1, arg2, arg3, responseCallback) {
+        responseCallback(arg1 + " " + arg2 + " " + arg3);
+    })
+</script>
+</body>
+</html>
